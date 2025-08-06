@@ -1,0 +1,71 @@
+.welcomePage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh; /* Changed from height to min-height */
+    box-sizing: border-box;
+    background-color: #ffffff;
+    padding: 20px; /* Added for safety spacing */
+}
+
+.logo {
+    width: auto;
+    height: auto;
+    display: block; /* Ensures proper image behavior */
+    
+    /* Responsive sizing with aspect ratio preservation */
+    max-width: min(80%, 800px); /* Won't exceed 800px even on large screens */
+    max-height: 80vh;
+    object-fit: contain; /* Prevents distortion */
+}
+
+/* ----- Responsive Breakpoints ----- */
+@media (max-width: 1200px) {
+    .logo {
+        max-width: 70%;
+    }
+}
+
+@media (max-width: 992px) {
+    .logo {
+        max-width: 75%;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        max-width: 85%;
+        max-height: 70vh;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo {
+        max-width: 90%;
+        padding: 0 10px; /* Prevents edge touching */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        max-width: 95%;
+        max-height: 60vh;
+    }
+}
+
+/* ----- Special Cases ----- */
+/* Portrait orientation on mobile */
+@media (max-height: 600px) and (max-width: 768px) {
+    .logo {
+        max-height: 55vh;
+    }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 2000px) {
+    .logo {
+        max-width: 60%;
+    }
+}
