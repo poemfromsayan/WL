@@ -4,83 +4,210 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - White Label</title>
-    <link rel="stylesheet" href="css/home.css">
+    <!-- CSS Files - CORRECTED PATHS -->
+    <link rel="stylesheet" href="./CSS/home.css">
+    <link rel="stylesheet" href="./CSS/header.css">
+    
+    <style>
+        /* Initial state for home page - moved inline to avoid path issues */
+        .homePage {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        /* Loaded state */
+        .homePage.loaded {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Loading spinner styles - moved inline */
+        .page-loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.4s ease-out;
+        }
+        
+        .page-loading.fade-out {
+            opacity: 0;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3377bb;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 <body class="homePage">
+    <!-- Loading spinner (will be removed after page loads) -->
+    <div class="page-loading">
+        <div class="loading-spinner"></div>
+    </div>
+
     <!-- Header -->
-    <header class="headerContainer" id="headerContainer">
-        <!-- Header content will be loaded by JavaScript -->
+    <header class="header">
+        <div class="logo-container">
+            <img class="header-logo" src="../../ASSETS/IMG/WLicon2.png" alt="White Label Logo">
+        </div>
+        
+        <button class="header-menu-button" aria-label="Toggle navigation menu">&#9776;</button>
+        
+        <ul class="menu hidden">
+            <li class="menu-item">
+                <a href="#home" class="menu-link">Plug & Play</a>
+            </li>
+            <li class="menu-item">
+                <a href="#startups" class="menu-link">Startups</a>
+            </li>
+            <li class="menu-item">
+                <a href="#consulting" class="menu-link">Consulting</a>
+            </li>
+            <li class="menu-item">
+                <a href="#hirenow" class="menu-link">Hire Now</a>
+            </li>
+            <li class="menu-item">
+                <a href="#crisis" class="menu-link">Organizational Crisis</a>
+            </li>
+            <li class="menu-item">
+                <a href="#findme" class="menu-link">Find Me a Job</a>
+            </li>
+        </ul>
     </header>
 
-    <!-- Container 1 - Introduction Section -->
-    <section class="container1-bg">
-        <div class="container1">
-            <div class="textContainer">
-                <!-- Text content can go here if needed -->
+    <!-- Main Content -->
+    <main style="margin-top: 60px;">
+        <section class="container1-bg" id="home">
+            <div class="container1">
+                <div class="textContainer"></div>
+                <img class="homeLogo" src="../../ASSETS/IMG/welcomeLogo.png" alt="Business Template">
+                <img class="introImage" src="../../ASSETS/IMG/homepic1.png" alt="Business Template">
             </div>
-            <img class="homeLogo" src="../../ASSETS/IMG/welcomeLogo.png" alt="Business Template">
-            <img class="introImage" src="../../ASSETS/IMG/homepic1.png" alt="Business Template">
-        </div>
-    </section>
+        </section>
 
-    <!-- Container 2 - Strategy and Cards -->
-    <section class="container2">
-        <h1 class="strategyTitle">Flexible & Efficient Strategy</h1>
-        <p class="strategySubtitle">
-            Whether you're aiming to broaden your service offerings or boost market competitiveness, we've got you.
-        </p>
-        
-        <div class="cardsSection">
-            <!-- Card 1 -->
-            <div class="card">
-                <img src="../../ASSETS/IMG/engagement1.png" class="cardIcon" alt="Card Icon">
-                <p class="cardText">
-                    At White Label, we prioritize establishing lasting partnerships over one-time service engagements.
-                </p>
-            </div>
+        <section class="container2" id="startups">
+            <h1 class="strategyTitle">Flexible & Efficient Strategy</h1>
+            <p class="strategySubtitle">
+                Whether you're aiming to broaden your service offerings or boost market competitiveness, we've got you.
+            </p>
             
-            <!-- Card 2 -->
-            <div class="card">
-                <img src="../../ASSETS/IMG/journey1.png" class="cardIcon" alt="Card Icon">
-                <p class="cardText">
-                    Specifically tailored for start-ups, our end-to-end process ensures operational excellence.
-                </p>
+            <div class="cardsSection">
+                <div class="card">
+                    <img src="../../ASSETS/IMG/engagement1.png" class="cardIcon" alt="Partnership Icon">
+                    <p class="cardText">
+                        At White Label, we prioritize establishing lasting partnerships over one-time service engagements.
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <img src="../../ASSETS/IMG/journey1.png" class="cardIcon" alt="Startup Journey Icon">
+                    <p class="cardText">
+                        Specifically tailored for start-ups, our end-to-end process ensures operational excellence.
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <img src="../../ASSETS/IMG/delivery1.png" class="cardIcon" alt="Delivery Icon">
+                    <p class="cardText">
+                        We are a dynamic and innovative consulting agency providing offshore services and recruiting solutions.
+                    </p>
+                </div>
             </div>
-            
-            <!-- Card 3 -->
-            <div class="card">
-                <img src="../../ASSETS/IMG/delivery1.png" class="cardIcon" alt="Card Icon">
-                <p class="cardText">
-                    We are a dynamic and innovative consulting agency providing offshore services and recruiting solutions.
-                </p>
+        </section>
+
+        <section class="container3" id="consulting">
+            <p class="descriptionText">
+                Grounded in a deep understanding of your unique business challenges, our mindset allows us to craft tailored solutions that align seamlessly with your strategic goals. With our extensive expertise in Human Resources and Administrative consulting, we extend beyond traditional services to provide holistic support tailored to your specific needs.
+            </p>
+            <p class="descriptionText">
+                We leverage the diverse talent pool of Costa Rica, renowned for its adaptability across various industries, White Label stands as a beacon for innovative and proven dynamic solutions ready to plug and play.
+            </p>
+        </section>
+
+        <section class="mapComponent" id="mapContainer">
+            <div style="display: flex; align-items: center; justify-content: center; height: 400px; background: #e9ecef; color: #666; border-radius: 8px;">
+                <p>Map Component - To be implemented</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Container 3 - Description -->
-    <section class="container3">
-        <p class="descriptionText">
-            Grounded in a deep understanding of your unique business challenges, our mindset allows us to craft tailored solutions that align seamlessly with your strategic goals. With our extensive expertise in Human Resources and Administrative consulting, we extend beyond traditional services to provide holistic support tailored to your specific needs.
-        </p>
-        <p class="descriptionText">
-            We leverage the diverse talent pool of Costa Rica, renowned for its adaptability across various industries, White Label stands as a beacon for innovative and proven dynamic solutions ready to plug and play.
-        </p>
-    </section>
-
-    <!-- Container 4 - Map Component -->
-    <section class="mapComponent" id="mapContainer">
-        <!-- Map will be initialized by JavaScript -->
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footerContainer" id="footerContainer">
-        <!-- Footer content will be loaded by JavaScript -->
+        <div style="text-align: center; padding: 2rem; background: #333; color: white;">
+            <p>Footer Content - To be implemented</p>
+        </div>
     </footer>
 
-    <!-- JavaScript Files -->
-    <script src="js/headerView.js"></script>
-    <script src="js/footerView.js"></script>
-    <script src="js/mapController.js"></script>
-    <script src="js/home.js"></script>
+    <!-- JavaScript Files - CORRECTED PATHS -->
+    <script src="./JS/header.js"></script>
+    <script src="./JS/home.js"></script>
+    
+    <!-- Simple transition script inline to avoid path issues -->
+    <script>
+        // Simple page transition - no external file needed
+        document.addEventListener('DOMContentLoaded', function() {
+            const loadingSpinner = document.querySelector('.page-loading');
+            const body = document.body;
+            
+            // Fade out loading spinner and fade in page
+            setTimeout(() => {
+                if (loadingSpinner) {
+                    loadingSpinner.classList.add('fade-out');
+                    
+                    setTimeout(() => {
+                        loadingSpinner.remove();
+                        body.classList.add('loaded');
+                    }, 400);
+                } else {
+                    body.classList.add('loaded');
+                }
+            }, 300);
+            
+            // Initialize home page
+            initializeHomePage();
+        });
+
+        function initializeHomePage() {
+            initializeHeader();
+            initializeFooter();
+            initializeMap();
+        }
+
+        function initializeHeader() {
+            console.log('Header initialized');
+        }
+
+        function initializeFooter() {
+            const footerContainer = document.getElementById('footerContainer');
+            if (footerContainer) {
+                console.log('Footer container found, initializing footer...');
+            }
+        }
+
+        function initializeMap() {
+            const mapContainer = document.getElementById('mapContainer');
+            if (mapContainer) {
+                console.log('Map container found, initializing map...');
+            }
+        }
+    </script>
 </body>
 </html>

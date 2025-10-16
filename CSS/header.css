@@ -1,0 +1,222 @@
+/* header.css */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #3377bb;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 60px;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.logo-container {
+    flex: 1;
+    margin-left: 30px;
+}
+
+.header-logo {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.header-menu-button {
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: #271207;
+    cursor: pointer;
+    margin-right: 20px;
+    padding: 5px;
+    transition: opacity 0.3s ease;
+}
+
+.header-menu-button:hover {
+    opacity: 0.8;
+}
+
+.menu {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #f3f3f3;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 220px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 999;
+    border-radius: 0 0 0 8px;
+}
+
+.menu.show {
+    display: block;
+    animation: fadeInDown 0.5s ease forwards;
+}
+
+.menu.hide {
+    animation: fadeOutUp 0.5s ease forwards;
+}
+
+.menu.hidden {
+    display: none;
+}
+
+.menu-item {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    text-align: left;
+    margin: 0;
+    transition: background-color 0.3s ease;
+}
+
+.menu-item:hover {
+    background-color: #f9f9f9;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.menu-link {
+    text-decoration: none;
+    color: #271207;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.menu-link:hover {
+    color: #3377bb;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOutUp {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+/* ----- RESPONSIVE DESIGN ----- */
+/* Tablet */
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 15px;
+    }
+    
+    .logo-container {
+        margin-left: 20px;
+    }
+    
+    .header-logo {
+        height: 35px;
+    }
+    
+    .header-menu-button {
+        font-size: 28px;
+        margin-right: 15px;
+    }
+    
+    .menu {
+        width: 200px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .header {
+        height: 50px;
+        padding: 5px 10px;
+    }
+    
+    .logo-container {
+        margin-left: 15px;
+    }
+    
+    .header-logo {
+        height: 30px;
+    }
+    
+    .header-menu-button {
+        font-size: 25px;
+        margin-right: 10px;
+    }
+    
+    .menu {
+        width: 100%;
+        top: 50px;
+        border-radius: 0;
+    }
+    
+    .menu-item {
+        padding: 12px 15px;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 360px) {
+    .header {
+        padding: 5px;
+    }
+    
+    .logo-container {
+        margin-left: 10px;
+    }
+    
+    .header-logo {
+        height: 28px;
+    }
+    
+    .header-menu-button {
+        font-size: 22px;
+        margin-right: 8px;
+    }
+    
+    .menu-link {
+        font-size: 13px;
+    }
+}
+
+/* Prevent horizontal scroll */
+html, body {
+    overflow-x: hidden;
+}
+
+/* Focus styles for accessibility */
+.header-menu-button:focus {
+    outline: 2px solid #271207;
+    outline-offset: 2px;
+}
+
+.menu-link:focus {
+    outline: 2px solid #3377bb;
+    outline-offset: -2px;
+}

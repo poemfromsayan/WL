@@ -1,27 +1,86 @@
-// welcome-scripts.js
+// welcome.js - Simplified without loading spinner
 
-function initializeWelcomePage() {
-    const logo = document.querySelector('.logo');
-    
-    // 1. Fade-in animation (replaces animateLogo())
-    logo.style.visibility = 'visible';
-    logo.classList.add('animate__animated', 'animate__fadeInDown');
-    
-    logo.addEventListener('animationend', () => {
-        logo.classList.remove('animate__animated', 'animate__fadeInDown');
-    });
-
-    // 2. After 1 second, fade-out and redirect (replaces fadeOutToHome())
-    setTimeout(() => {
-        logo.classList.add('animate__animated', 'animate__fadeOut');
+class WelcomeAnimation {
+    constructor() {
+        this.logo = document.querySelector('.logo');
+        this.welcomePage = document.querySelector('.welcomePage');
+        this.animationTimeout = null;
         
-        logo.addEventListener('animationend', () => {
-            logo.classList.remove('animate__animated', 'animate__fadeOut');
-            // Redirect to home page (adjust path as needed)
-            window.location.href = "home.html"; 
-        }, { once: true });
-    }, 1000);
+        this.init();
+    }
+    
+    init() {
+        if (!this.logo) {
+            this.redirectWithDelay(1500);
+            return;
+        }
+        
+        this.logo.style.visibility = 'visible';
+        this.startAnimationSequence();
+    }
+    
+    startAnimationSequence() {
+        this.fadeInLogo();
+    }
+    
+    fadeInLogo() {
+        setTimeout(() => {
+            this.logo.classList.add('fade-in');
+            
+            setTimeout(() => {
+                this.fadeOutLogo();
+            }, 1600);
+            
+        }, 100);
+    }
+    
+    fadeOutLogo() {
+        this.logo.classList.remove('fade-in');
+        this.logo.classList.add('fade-out');
+        
+        setTimeout(() => {
+            this.fadeOutPage();
+        }, 600);
+    }
+    
+    fadeOutPage() {
+        if (this.welcomePage) {
+            this.welcomePage.classList.add('fade-out');
+        }
+        
+        // Direct redirect without loading spinner
+        setTimeout(() => {
+            this.redirectToHome();
+        }, 600);
+    }
+    
+    redirectToHome() {
+        if (this.animationTimeout) {
+            clearTimeout(this.animationTimeout);
+        }
+        window.location.href = "home.html";
+    }
+    
+    redirectWithDelay(delay) {
+        this.animationTimeout = setTimeout(() => {
+            this.redirectToHome();
+        }, delay);
+    }
+    
+    destroy() {
+        if (this.animationTimeout) {
+            clearTimeout(this.animationTimeout);
+        }
+    }
 }
 
-// Wait for DOM to load before executing
-document.addEventListener('DOMContentLoaded', initializeWelcomePage);
+document.addEventListener('DOMContentLoaded', function() {
+    new WelcomeAnimation();
+});
+
+// Fallback
+setTimeout(() => {
+    if (window.location.pathname.includes('welcome.html')) {
+        window.location.href = "home.html";
+    }
+}, 8000);

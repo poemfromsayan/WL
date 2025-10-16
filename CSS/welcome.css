@@ -4,24 +4,46 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    min-height: 100vh; /* Changed from height to min-height */
+    min-height: 100vh;
     box-sizing: border-box;
     background-color: #ffffff;
-    padding: 20px; /* Added for safety spacing */
+    padding: 20px;
+    opacity: 1;
+    transition: opacity 0.6s ease-in-out;
 }
 
 .logo {
     width: auto;
     height: auto;
-    display: block; /* Ensures proper image behavior */
+    display: block;
     
-    /* Responsive sizing with aspect ratio preservation */
-    max-width: min(80%, 800px); /* Won't exceed 800px even on large screens */
+    /* Start completely hidden and slightly scaled down */
+    opacity: 0;
+    transform: translateY(-30px) scale(0.9);
+    transition: all 0.6s ease-in-out;
+    
+    /* Responsive sizing */
+    max-width: min(80%, 800px);
     max-height: 80vh;
-    object-fit: contain; /* Prevents distortion */
+    object-fit: contain;
 }
 
-/* ----- Responsive Breakpoints ----- */
+/* Animation states */
+.logo.fade-in {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.logo.fade-out {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+}
+
+.welcomePage.fade-out {
+    opacity: 0;
+}
+
+/* Responsive breakpoints remain the same */
 @media (max-width: 1200px) {
     .logo {
         max-width: 70%;
@@ -44,7 +66,7 @@
 @media (max-width: 576px) {
     .logo {
         max-width: 90%;
-        padding: 0 10px; /* Prevents edge touching */
+        padding: 0 10px;
     }
 }
 
@@ -55,15 +77,13 @@
     }
 }
 
-/* ----- Special Cases ----- */
-/* Portrait orientation on mobile */
+/* Special cases */
 @media (max-height: 600px) and (max-width: 768px) {
     .logo {
         max-height: 55vh;
     }
 }
 
-/* Ultra-wide screens */
 @media (min-width: 2000px) {
     .logo {
         max-width: 60%;
