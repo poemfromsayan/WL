@@ -1,0 +1,161 @@
+/* footer.css */
+.footer {
+    background-color: #3377bb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.footerContent {
+    text-align: center;
+    color: #ffffff;
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
+.footer-section a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    font-family: Arial, sans-serif;
+}
+
+.footer-section a:hover {
+    color: #f0c419;
+    transform: translateY(-1px);
+}
+
+/* Legal notice */
+.footer-legal {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #ffffff;
+    width: 100%;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Additional class for footer links */
+.footer-link {
+    padding: 2px 0;
+    transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+    transform: translateY(-1px);
+}
+
+/* Focus styles for accessibility */
+.footer-section a:focus {
+    outline: 2px solid #f0c419;
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* ----- RESPONSIVE DESIGN ----- */
+/* Tablet */
+@media (max-width: 768px) {
+    .footer {
+        padding: 30px 15px;
+    }
+    
+    .footerContent {
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    .footer-section {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .footer-section p,
+    .footer-section a {
+        font-size: 0.9rem;
+    }
+    
+    .footer-legal {
+        font-size: 0.85rem;
+        margin-top: 20px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .footer {
+        padding: 20px 10px;
+    }
+    
+    .footerContent {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .footer-section p,
+    .footer-section a {
+        font-size: 0.8rem;
+    }
+    
+    .footer-legal {
+        font-size: 0.75rem;
+        margin-top: 15px;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 360px) {
+    .footer {
+        padding: 15px 8px;
+    }
+    
+    .footer-section p,
+    .footer-section a {
+        font-size: 0.75rem;
+    }
+    
+    .footer-legal {
+        font-size: 0.7rem;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+    .footerContent {
+        gap: 60px;
+    }
+}
+
+/* Smooth transitions */
+.footer-section a,
+.footer-section p {
+    transition: all 0.3s ease;
+}

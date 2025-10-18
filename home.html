@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - White Label</title>
-    <!-- CSS Files - CORRECTED PATHS -->
+    <!-- Favicon for dynamic dark/light mode -->
+    <link id="favicon" rel="icon" type="image/png" href="../../ASSETS/IMG/WLicon2.png">
+    <!-- CSS Files -->
     <link rel="stylesheet" href="./CSS/home.css">
     <link rel="stylesheet" href="./CSS/header.css">
+    <link rel="stylesheet" href="./CSS/footer.css">
+    <link rel="stylesheet" href="./CSS/map.css">
     
     <style>
-        /* Initial state for home page - moved inline to avoid path issues */
+        /* Initial state for home page */
         .homePage {
             opacity: 0;
             transform: translateY(20px);
@@ -22,7 +26,7 @@
             transform: translateY(0);
         }
         
-        /* Loading spinner styles - moved inline */
+        /* Loading spinner styles */
         .page-loading {
             position: fixed;
             top: 0;
@@ -142,27 +146,58 @@
             </p>
         </section>
 
+        <!-- Map Section -->
         <section class="mapComponent" id="mapContainer">
-            <div style="display: flex; align-items: center; justify-content: center; height: 400px; background: #e9ecef; color: #666; border-radius: 8px;">
-                <p>Map Component - To be implemented</p>
+            <div class="map-placeholder">
+                <p>Loading map...</p>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="footerContainer" id="footerContainer">
-        <div style="text-align: center; padding: 2rem; background: #333; color: white;">
-            <p>Footer Content - To be implemented</p>
+    <footer class="footer">
+        <div class="footerContent">
+            <!-- Section 1 - Contact Information -->
+            <div class="footer-section">
+                <p>Contact Us:</p>
+                <p>Email: contact@whitelabel.com</p>
+                <p>Phone: +1 123 456 7890</p>
+            </div>
+            
+            <!-- Section 2 - Quick Links -->
+            <div class="footer-section">
+                <p>Quick Links:</p>
+                <a href="#home" class="footer-link">Home</a>
+                <a href="#startups" class="footer-link">Startups</a>
+                <a href="#hirenow" class="footer-link">Hire Now</a>
+                <a href="#findme" class="footer-link">Find Me a Job</a>
+            </div>
+            
+            <!-- Section 3 - Social Media -->
+            <div class="footer-section">
+                <p>Follow us:</p>
+                <a href="https://linkedin.com" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://twitter.com" class="footer-link" target="_blank" rel="noopener">Twitter</a>
+                <a href="https://instagram.com" class="footer-link" target="_blank" rel="noopener">Instagram</a>
+            </div>
+            
+            <!-- Legal Notice with Dynamic Year -->
+            <p class="footer-legal" id="copyrightYear">
+                <!-- Year will be populated by footer.js -->
+            </p>
         </div>
     </footer>
 
-    <!-- JavaScript Files - CORRECTED PATHS -->
+    <!-- JavaScript Files -->
+    <script src="./JS/global.js"></script>
     <script src="./JS/header.js"></script>
+    <script src="./JS/footer.js"></script>
+    <script src="./JS/map.js"></script>
     <script src="./JS/home.js"></script>
     
-    <!-- Simple transition script inline to avoid path issues -->
+    <!-- Page transition script -->
     <script>
-        // Simple page transition - no external file needed
+        // Simple page transition
         document.addEventListener('DOMContentLoaded', function() {
             const loadingSpinner = document.querySelector('.page-loading');
             const body = document.body;
@@ -180,34 +215,7 @@
                     body.classList.add('loaded');
                 }
             }, 300);
-            
-            // Initialize home page
-            initializeHomePage();
         });
-
-        function initializeHomePage() {
-            initializeHeader();
-            initializeFooter();
-            initializeMap();
-        }
-
-        function initializeHeader() {
-            console.log('Header initialized');
-        }
-
-        function initializeFooter() {
-            const footerContainer = document.getElementById('footerContainer');
-            if (footerContainer) {
-                console.log('Footer container found, initializing footer...');
-            }
-        }
-
-        function initializeMap() {
-            const mapContainer = document.getElementById('mapContainer');
-            if (mapContainer) {
-                console.log('Map container found, initializing map...');
-            }
-        }
     </script>
 </body>
 </html>
