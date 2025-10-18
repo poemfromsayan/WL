@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startups - White Label</title>
+    <!-- Favicon -->
+    <link id="favicon" rel="icon" type="image/png" href="../../ASSETS/IMG/WLicon2.png">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../CSS/header.css">
+    <link rel="stylesheet" href="../CSS/footer.css">
+    <link rel="stylesheet" href="../CSS/startups.css">
+    <!-- Animate.css for entrance animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <style>
+        /* Page transition styles */
+        .startupsPage {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .startupsPage.loaded {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="startupsPage">
+    <!-- Header -->
+    <header class="header">
+        <div class="logo-container">
+            <img class="header-logo" src="../../ASSETS/IMG/WLicon2.png" alt="White Label Logo">
+        </div>
+        
+        <button class="header-menu-button" aria-label="Toggle navigation menu">&#9776;</button>
+        
+        <ul class="menu hidden">
+            <li class="menu-item">
+                <a href="../home.html" class="menu-link">Plug & Play</a>
+            </li>
+            <li class="menu-item">
+                <a href="./startups.html" class="menu-link">Startups</a>
+            </li>
+            <li class="menu-item">
+                <a href="../consulting/consulting.html" class="menu-link">Consulting</a>
+            </li>
+            <li class="menu-item">
+                <a href="../hirenow/hirenow.html" class="menu-link">Hire Now</a>
+            </li>
+            <li class="menu-item">
+                <a href="../crisis/crisis.html" class="menu-link">Organizational Crisis</a>
+            </li>
+            <li class="menu-item">
+                <a href="../findme/findme.html" class="menu-link">Find Me a Job</a>
+            </li>
+        </ul>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Container 1 - Title, subtitle and image -->
+        <section class="container1-bg">
+            <div class="container1">
+                <div class="title-container">
+                    <h1 class="startups-title">Startups</h1>
+                    <p class="startups-subtitle">Nearshore - Corporate - You Name it...</p>
+                </div>
+                <img class="startups-img" src="../../ASSETS/IMG/startup1.png" alt="Startups">
+            </div>
+        </section>
+
+        <!-- Full Width Banner -->
+        <section class="full-image-container">
+            <img class="startups-fullImage" src="../../ASSETS/IMG/startups1.png" alt="Startups Banner">
+        </section>
+
+        <!-- Container 2 - Descriptive texts -->
+        <section class="container2">
+            <p class="description-text">
+                Boasting over 20 years of experience in the shared services industry, we have successfully combined six start-ups, operating both within and outside free zones.
+            </p>
+            <p class="description-text">
+                If you are looking to place your start up or move your talent to a nearshore location, our expertise spans across critical industries such as Medical Devices, Tech, and AI, making us your ideal partner in business growth and development.
+            </p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footerContent">
+            <div class="footer-section">
+                <p>Contact Us:</p>
+                <p>Email: contact@whitelabel.com</p>
+                <p>Phone: +1 123 456 7890</p>
+            </div>
+            
+            <div class="footer-section">
+                <p>Quick Links:</p>
+                <a href="../home.html" class="footer-link">Home</a>
+                <a href="startups.html" class="footer-link">Startups</a>
+                <a href="../hirenow/hirenow.html" class="footer-link">Hire Now</a>
+                <a href="../findme/findme.html" class="footer-link">Find Me a Job</a>
+            </div>
+            
+            <div class="footer-section">
+                <p>Follow us:</p>
+                <a href="https://linkedin.com" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://twitter.com" class="footer-link" target="_blank" rel="noopener">Twitter</a>
+                <a href="https://instagram.com" class="footer-link" target="_blank" rel="noopener">Instagram</a>
+            </div>
+            
+            <p class="footer-legal" id="copyrightYear"></p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="../JS/global.js"></script>
+    <script src="../JS/header.js"></script>
+    <script src="../JS/footer.js"></script>
+    <script src="../JS/startups.js"></script>
+</body>
+</html>

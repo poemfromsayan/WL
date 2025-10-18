@@ -1,4 +1,4 @@
-// header.js - Only necessary functionality
+// header.js - Updated with proper page navigation handling
 
 class HeaderController {
     constructor() {
@@ -27,14 +27,24 @@ class HeaderController {
             }
         });
 
-        // Menu item clicks - smooth scrolling to sections
+        // Menu item clicks - handle both anchor links and page navigation
         const menuLinks = document.querySelectorAll('.menu-link');
         menuLinks.forEach(link => {
             link.addEventListener('click', (event) => {
-                event.preventDefault();
-                const targetId = link.getAttribute('href');
-                this.navigateToSection(targetId);
-                this.hideMenu();
+                const href = link.getAttribute('href');
+                
+                // If it's an anchor link (starts with #), handle smooth scrolling
+                if (href && href.startsWith('#')) {
+                    event.preventDefault();
+                    this.navigateToSection(href);
+                    this.hideMenu();
+                }
+                // If it's a page link (contains .html), let the browser handle it naturally
+                // No need for preventDefault() - the browser will navigate to the page
+                else if (href && href.includes('.html')) {
+                    this.hideMenu();
+                    // Let the browser handle the navigation naturally
+                }
             });
         });
 
@@ -82,7 +92,6 @@ class HeaderController {
             });
         } else {
             console.warn(`Section ${sectionId} not found`);
-            // Fallback: You can implement page navigation here if needed
         }
     }
 }

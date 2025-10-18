@@ -1,0 +1,222 @@
+/* startups.css - Improved version */
+.startupsPage {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: stretch;
+    background-color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedores principales */
+.container1,
+.container2,
+.container3 {
+    flex: 1;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Footer */
+.footer {
+    width: 100%;
+    background-color: #3377bb;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+}
+
+/* Contenedor 1: Título, subtítulo e imagen */
+.container1-bg {
+    width: 100%;
+    background: linear-gradient(to bottom, #9a9a9a74, #ffffff);
+    padding: 0;
+    margin: 0;
+}
+
+.container1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    padding: 20px;
+    margin: 0 auto;
+    padding-top: 100px;
+    box-sizing: border-box;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}
+
+.startups-title {
+    font-size: 4.5rem;
+    font-family: 'DreamCottage', sans-serif;
+    margin-bottom: 10px;
+    color: #333;
+    line-height: 1.1;
+}
+
+.startups-subtitle {
+    font-size: 1.2rem;
+    margin-top: 5px;
+    color: #666;
+    line-height: 1.4;
+}
+
+.startups-img {
+    max-width: 400px;
+    width: 40%;
+    margin-right: 0;
+    border: 1px solid #000;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Contenedor de Banner */
+.full-image-container {
+    width: 100%;
+    margin: 40px 0;
+    height: 700px;
+    overflow: hidden;
+}
+
+.startups-fullImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor 2: Textos descriptivos */
+.container2 {
+    max-width: 900px;
+    margin: 40px auto;
+    text-align: left;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.description-text {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: #444;
+}
+
+.description-text:last-child {
+    margin-bottom: 0;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .startups-title {
+        font-size: 3.5rem;
+    }
+    
+    .container1 {
+        padding-top: 80px;
+    }
+    
+    .full-image-container {
+        height: 500px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .container1 {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-top: 70px;
+    }
+
+    .title-container {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .startups-img {
+        width: 70%;
+        margin-top: 20px;
+    }
+
+    .startups-title {
+        font-size: 2.5rem;
+    }
+    
+    .startups-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .container2 {
+        padding: 0 15px;
+        margin: 30px auto;
+    }
+
+    .description-text {
+        font-size: 1.1rem;
+    }
+
+    .full-image-container {
+        height: 300px;
+        margin: 30px 0;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .startups-title {
+        font-size: 2rem;
+    }
+    
+    .startups-subtitle {
+        font-size: 1rem;
+    }
+    
+    .description-text {
+        font-size: 1rem;
+    }
+    
+    .full-image-container {
+        height: 250px;
+        margin: 20px 0;
+    }
+    
+    .container1 {
+        padding: 60px 15px 20px;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1440px) {
+    .container1,
+    .container2 {
+        max-width: 1400px;
+    }
+}
+
+/* Ensure proper font fallbacks */
+.startups-title {
+    font-family: 'DreamCottage', 'Arial', sans-serif;
+}
+
+/* Smooth transitions */
+.startups-img,
+.startups-fullImage {
+    transition: transform 0.3s ease;
+}
+
+.startups-img:hover {
+    transform: scale(1.02);
+}
