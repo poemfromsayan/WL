@@ -3,31 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Startups - White Label</title>
+    <title>Consulting - White Label</title>
     <!-- Favicon -->
     <link id="favicon" rel="icon" type="image/png" href="../../ASSETS/IMG/WLicon2.png">
     <!-- CSS Files -->
     <link rel="stylesheet" href="../CSS/header.css">
     <link rel="stylesheet" href="../CSS/footer.css">
-    <link rel="stylesheet" href="../CSS/startups.css">
-    <!-- Animate.css for entrance animation -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="../CSS/consultations.css">
+    <!-- Calendly Widget -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     
     <style>
         /* Page transition styles */
-        .startupsPage {
+        .consultationsPage {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
         
-        .startupsPage.loaded {
+        .consultationsPage.loaded {
             opacity: 1;
             transform: translateY(0);
         }
+        
+        .hidden {
+            display: none !important;
+        }
     </style>
 </head>
-<body class="startupsPage">
+<body class="consultationsPage">
     <!-- Header -->
     <header class="header">
         <div class="logo-container">
@@ -38,13 +42,13 @@
         
         <ul class="menu hidden">
             <li class="menu-item">
-                <a href="../home.html" class="menu-link">Plug & Play</a>
+                <a href="./home.html" class="menu-link">Plug & Play</a>
             </li>
             <li class="menu-item">
                 <a href="./startups.html" class="menu-link">Startups</a>
             </li>
             <li class="menu-item">
-                <a href="./consultations.html" class="menu-link">Consulting</a>
+                <a href="consultations.html" class="menu-link">Consulting</a>
             </li>
             <li class="menu-item">
                 <a href="../hirenow/hirenow.html" class="menu-link">Hire Now</a>
@@ -60,30 +64,59 @@
 
     <!-- Main Content -->
     <main>
-        <!-- Container 1 - Title, subtitle and image -->
+        <!-- Container 1: Hero Section -->
         <section class="container1-bg">
             <div class="container1">
                 <div class="title-container">
-                    <h1 class="startups-title">Startups</h1>
-                    <p class="startups-subtitle">Nearshore - Corporate - You Name it...</p>
+                    <h1 class="consultations-title">Professionals Consulting</h1>
+                    <p class="consultations-subtitle">Ad Hoc</p>
                 </div>
-                <img class="startups-img" src="../../ASSETS/IMG/startup1.png" alt="Startups">
+                <img class="consultations-img" src="../../ASSETS/IMG/consultpic1.png" alt="Consulting">
             </div>
         </section>
 
-        <!-- Full Width Banner -->
-        <section class="full-image-container">
-            <img class="startups-fullImage" src="../../ASSETS/IMG/startups1.png" alt="Startups Banner">
-        </section>
-
-        <!-- Container 2 - Descriptive texts -->
+        <!-- Container 2: Description -->
         <section class="container2">
             <p class="description-text">
-                Boasting over 20 years of experience in the shared services industry, we have successfully combined six start-ups, operating both within and outside free zones.
+                Tailored Management and HR consulting services covering the entire employment lifecycle, from performance management to labor law compliance, offering solutions to specific HR challenges without the need for a long-term contract. Wanna talk about it? First 30 minutes are free.
             </p>
-            <p class="description-text">
-                If you are looking to place your start up or move your talent to a nearshore location, our expertise spans across critical industries such as Medical Devices, Tech, and AI, making us your ideal partner in business growth and development.
-            </p>
+        </section>
+
+        <!-- Container 3: Experts Title -->
+        <section class="container3">
+            <h1 class="experts-title">We have an Expert for Every Conversation</h1>
+        </section>
+
+        <!-- Container 4: Consultant Profile with Calendly -->
+        <section class="consultant-profile-container">
+            <div class="consultant-card">
+                <!-- Consultant Image -->
+                <img class="consultant-image" src="../../ASSETS/IMG/maye.png" alt="Maye the Consultant">
+                
+                <!-- Profile Information -->
+                <div class="profile-info">
+                    <h1 class="consultant-name">Mayela Zúñiga</h1>
+                    <p class="consultant-title">HR & Management Specialist</p>
+                    
+                    <p class="consultant-description">
+                        With over 15 years of experience in human resources and organizational development, I provide tailored solutions for your business challenges.
+                    </p>
+
+                    <!-- Calendly Container -->
+                    <div class="calendly-container">
+                        <!-- Calendly Inline Widget -->
+                        <div class="calendly-inline-widget" 
+                            data-url="https://calendly.com/may-whitelabel/discovery-call"
+                            style="min-width:320px;height:630px;">
+                        </div>
+                        
+                        <!-- Fallback Message -->
+                        <p class="calendly-fallback hidden">
+                            Booking system loading... If you don't see the calendar, please refresh the page or try again later.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -99,8 +132,8 @@
             <div class="footer-section">
                 <p>Quick Links:</p>
                 <a href="../home.html" class="footer-link">Home</a>
-                <a href="startups.html" class="footer-link">Startups</a>
-                <a href="../hirenow/hirenow.html" class="footer-link">Hire Now</a>
+                <a href="../startups/startups.html" class="footer-link">Startups</a>
+                <a href="consultations.html" class="footer-link">Consulting</a>
                 <a href="../findme/findme.html" class="footer-link">Find Me a Job</a>
             </div>
             
@@ -116,9 +149,10 @@
     </footer>
 
     <!-- JavaScript Files -->
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     <script src="../JS/global.js"></script>
     <script src="../JS/header.js"></script>
     <script src="../JS/footer.js"></script>
-    <script src="../JS/startups.js"></script>
+    <script src="../JS/consultations.js"></script>
 </body>
 </html>
