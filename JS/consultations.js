@@ -4,12 +4,14 @@ class ConsultationsPage {
         this.calendlyLoaded = false;
         this.calendlyRetries = 0;
         this.maxRetries = 5;
+        this.loadingTimeout = null;
         this.init();
     }
 
     init() {
         this.animateEntrance();
         this.initCalendly();
+        this.setupLoadingTimeout();
         console.log('Consultations page initialized');
     }
 
@@ -18,6 +20,16 @@ class ConsultationsPage {
         if (page) {
             page.classList.add('loaded');
         }
+    }
+
+    setupLoadingTimeout() {
+        // Set timeout for 5 minutes (300,000 milliseconds)
+        this.loadingTimeout = setTimeout(() => {
+            // Only show fallback if Calendly hasn't loaded yet
+            if (!this.calendlyLoaded) {
+                this.showFallback();
+            }
+        }, 300000); // 5 minutes = 300,000 ms
     }
 
     initCalendly() {
@@ -41,8 +53,9 @@ class ConsultationsPage {
                 setTimeout(() => this.waitForCalendly(), 500 * this.calendlyRetries);
             }
         } else {
-            // Max retries reached, show fallback
-            this.showFallback();
+            // Max retries reached, but DON'T show fallback immediately
+            // Let the 5-minute timeout handle it
+            console.log('Calendly retries exhausted, waiting for timeout');
         }
     }
 
@@ -50,16 +63,22 @@ class ConsultationsPage {
         try {
             Calendly.initInlineWidgets();
             this.calendlyLoaded = true;
-            console.log('Calendly widget initialized successfully');
+            
+            // Clear the 5-minute timeout since Calendly loaded successfully
+            if (this.loadingTimeout) {
+                clearTimeout(this.loadingTimeout);
+            }
             
             // Hide fallback message if it was shown
             const fallback = document.querySelector('.calendly-fallback');
             if (fallback) {
                 fallback.classList.add('hidden');
             }
+            
+            console.log('Calendly widget initialized successfully');
         } catch (error) {
             console.error('Calendly initialization failed:', error);
-            this.showFallback();
+            // Don't show fallback immediately, let timeout handle it
         }
     }
 
@@ -76,6 +95,10 @@ class ConsultationsPage {
                 directLink.rel = "noopener";
                 directLink.innerText = "Click here to book directly on Calendly";
                 directLink.className = "calendly-direct-link";
+                directLink.style.display = "block";
+                directLink.style.marginTop = "10px";
+                directLink.style.color = "#0069ff";
+                directLink.style.textDecoration = "underline";
                 fallback.appendChild(directLink);
             }
         }
