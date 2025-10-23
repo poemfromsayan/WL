@@ -1,0 +1,620 @@
+/* Find Me a Job Page Base Styles */
+.findMeJobPage {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Header Container */
+.headerContainer {
+    width: 100%;
+    /* Header styles will be added from header.css */
+}
+
+/* Hero Section - Matching Container1 from home */
+.hero-section {
+    width: 100%;
+    background: linear-gradient(to bottom, #9a9a9a74, #ffffff);
+    padding: 40px 0;
+}
+
+.hero-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 40px 20px; /* Even larger top padding */
+    gap: 60px;
+    box-sizing: border-box;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 500px;
+}
+
+.hero-image {
+    width: 45%;
+    max-width: 400px;
+    border: solid 1px black;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: auto;
+}
+
+/* Form Section - Matching Container2 structure */
+.form-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    text-align: center;
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
+
+.form-container {
+    background-color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.297);
+    margin-bottom: 25px;
+    line-height: 1.6;
+    color: #444;
+    text-align: center;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.form-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+.form-description {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #666;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Form Styles */
+.cv-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 1rem;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    padding: 12px 16px;
+    border: 2px solid #e1e8ed;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    background-color: #fff;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* File Upload Styles */
+.file-upload-container {
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.file-input {
+    position: absolute;
+    left: -9999px;
+}
+
+.file-upload-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: 2px dashed #e1e8ed;
+    border-radius: 8px;
+    padding: 0;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+.file-upload-label:hover {
+    border-color: #3498db;
+    background-color: #e3f2fd;
+}
+
+.file-upload-text {
+    flex: 1;
+    padding: 12px 16px;
+    color: #666;
+}
+
+.file-upload-button {
+    background: #3498db;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    margin: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.file-upload-button:hover {
+    background: #2980b9;
+}
+
+.file-hint {
+    color: #666;
+    margin-top: 6px;
+    font-size: 0.9rem;
+}
+
+/* Consent Checkbox */
+.consent-group {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.consent-checkbox {
+    margin-top: 2px;
+}
+
+.consent-label {
+    font-weight: normal;
+    margin-bottom: 0;
+    line-height: 1.4;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+/* Submit Button - Matching card hover effects */
+.submit-button {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.submit-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+    background: #2980b9;
+}
+
+.submit-button:active {
+    transform: translateY(-2px);
+}
+
+/* Success Message */
+.success-message {
+    text-align: center;
+    padding: 40px 30px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.297);
+    margin: 20px 0;
+}
+
+.success-icon {
+    font-size: 4rem;
+    color: #27ae60;
+    margin-bottom: 20px;
+}
+
+.success-message h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.success-message p {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Field Error Styles */
+.field-error {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+/* Footer Container */
+.footerContainer {
+    width: 100%;
+    background: #333;
+    color: white;
+    padding: 2rem 0;
+    box-sizing: border-box;
+}
+
+/* --- IMPROVED RESPONSIVENESS - MATCHING HOME PAGE --- */
+
+/* Tablet and smaller laptops */
+@media (max-width: 1024px) {
+    .hero-container,
+    .form-section {
+        padding: 20px 30px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .hero-container {
+        gap: 40px;
+    }
+    
+    .hero-image {
+        width: 40%;
+        max-width: 100%;
+    }
+    
+    .form-container {
+        padding: 20px 25px;
+        width: 100%;
+    }
+    
+    .cv-form {
+        max-width: 100%;
+    }
+}
+
+/* Tablet - FIXED OVERFLOW */
+@media (max-width: 768px) {
+    .hero-container,
+    .form-section {
+        padding: 20px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        width: 100%;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .main-title {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        padding: 0 10px;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 25px;
+        padding: 0 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .hero-image {
+        width: 70%;
+        max-width: 100%;
+        margin-top: 0;
+    }
+
+    .form-title {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        padding: 0 10px;
+    }
+
+    .form-description {
+        font-size: 1.1rem;
+        margin-bottom: 25px;
+        padding: 0 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .form-container {
+        padding: 20px;
+        width: 100%;
+        text-align: left;
+        margin-left: 0;
+        margin-right: 0;
+        box-sizing: border-box;
+    }
+
+    .consent-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .file-upload-label {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .file-upload-text {
+        padding: 10px;
+    }
+
+    .file-upload-button {
+        width: 100%;
+        margin: 0;
+        border-radius: 0 0 6px 6px;
+    }
+}
+
+/* Mobile - COMPLETELY FIXED OVERFLOW */
+@media (max-width: 480px) {
+    .findMeJobPage {
+        overflow-x: hidden;
+    }
+    
+    .hero-container,
+    .form-section {
+        padding: 15px;
+        width: 100vw;
+        max-width: 100vw;
+        margin-left: 0;
+        margin-right: 0;
+        box-sizing: border-box;
+    }
+    
+    .hero-section {
+        padding: 30px 0;
+        width: 100%;
+    }
+    
+    .hero-container {
+        gap: 25px;
+        width: 100%;
+        padding: 15px;
+    }
+
+    .hero-image {
+        width: 90%;
+        max-width: 90%;
+    }
+
+    .form-section {
+        margin: 30px auto;
+        width: 100%;
+    }
+
+    .main-title {
+        font-size: 1.8rem;
+        margin-bottom: 12px;
+        padding: 0 5px;
+        width: 100%;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 20px;
+        line-height: 1.5;
+        padding: 0 5px;
+        width: 100%;
+    }
+
+    .form-title {
+        font-size: 1.8rem;
+        margin-bottom: 12px;
+        padding: 0 5px;
+        width: 100%;
+    }
+
+    .form-description {
+        font-size: 1rem;
+        margin-bottom: 20px;
+        line-height: 1.5;
+        padding: 0 5px;
+        width: 100%;
+    }
+
+    .form-container {
+        padding: 18px 15px;
+        width: 100%;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+    }
+
+    .submit-button {
+        padding: 14px 24px;
+        font-size: 1rem;
+    }
+
+    .success-message {
+        padding: 30px 20px;
+    }
+
+    .success-icon {
+        font-size: 3rem;
+    }
+
+    .success-message h3 {
+        font-size: 1.5rem;
+    }
+
+    .success-message p {
+        font-size: 1rem;
+    }
+}
+
+/* Small mobile devices - EXTRA SAFETY */
+@media (max-width: 360px) {
+    .hero-container,
+    .form-section {
+        padding: 10px;
+        width: 100vw;
+    }
+    
+    .hero-container {
+        gap: 20px;
+    }
+    
+    .hero-image {
+        width: 95%;
+        max-width: 95%;
+    }
+    
+    .main-title {
+        font-size: 1.6rem;
+        padding: 0;
+    }
+    
+    .form-title {
+        font-size: 1.6rem;
+        padding: 0;
+    }
+    
+    .form-container {
+        padding: 15px 10px;
+    }
+    
+    .form-input,
+    .form-select,
+    .form-textarea {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+    
+    .consent-group {
+        padding: 12px 10px;
+    }
+    
+    .consent-label {
+        font-size: 0.85rem;
+    }
+    
+    .submit-button {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+    
+    /* Force no horizontal scroll */
+    body, html {
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1440px) {
+    .hero-container,
+    .form-section {
+        max-width: 1400px;
+    }
+}
+
+/* Smooth transitions for all interactive elements */
+.hero-image, .form-input, .form-select, .form-textarea, .file-upload-label, .submit-button {
+    transition: all 0.3s ease;
+}
+
+/* Focus styles for accessibility */
+.form-input:focus, .form-select:focus, .form-textarea:focus, .submit-button:focus {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+}
+
+/* Prevent horizontal scrolling - ENHANCED */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
+}
+
+/* Better image handling */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Universal box-sizing */
+* {
+    box-sizing: border-box;
+}
+
+/* Hidden utility class */
+.hidden {
+    display: none !important;
+}
