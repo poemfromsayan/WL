@@ -3,36 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Organizational Crisis Management</title>
+    <title>Organizational Crisis - White Label</title>
+    <!-- Favicon -->
+    <link id="favicon" rel="icon" type="image/png" href="../../ASSETS/IMG/WLicon2.png">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="./CSS/header.css">
+    <link rel="stylesheet" href="./CSS/footer.css">
     <link rel="stylesheet" href="./CSS/crisis.css">
+    
+    <style>
+        /* Page transition styles */
+        .crisisPage {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .crisisPage.loaded {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
-<body>
-    <div class="crisisPage">
-        <!-- Header -->
-        <div class="headerContainer" id="headerContainer">
-            <!-- Header content will be inserted here by JavaScript -->
+<body class="crisisPage">
+    <!-- Header -->
+    <header class="header">
+        <div class="logo-container">
+            <img class="header-logo" src="../../ASSETS/IMG/WLicon2.png" alt="White Label Logo">
         </div>
+        
+        <button class="header-menu-button" aria-label="Toggle navigation menu">&#9776;</button>
+        
+        <ul class="menu hidden">
+            <li class="menu-item">
+                <a href="./index.html" class="menu-link">Plug & Play</a>
+            </li>
+            <li class="menu-item">
+                <a href="./startups.html" class="menu-link">Startups</a>
+            </li>
+            <li class="menu-item">
+                <a href="./consultations.html" class="menu-link">Consulting</a>
+            </li>
+            <li class="menu-item">
+                <a href="#" class="menu-link">Hire Now</a>
+            </li>
+            <li class="menu-item">
+                <a href="./crisis.html" class="menu-link">Organizational Crisis</a>
+            </li>
+            <li class="menu-item">
+                <a href="./findme.html" class="menu-link">Find Me a Job</a>
+            </li>
+        </ul>
+    </header>
 
+    <!-- Main Content -->
+    <main>
         <!-- Container 1: Title, subtitle and side image -->
-        <div class="crisis-container1">
+        <section class="crisis-container1">
             <div class="crisis-titleContainer">
                 <h1 class="crisis-title">Organizational Crisis Management</h1>
                 <h2 class="crisis-subtitle">Supporting teams through challenging times with First Psychological Aids.</h2>
             </div>
-            <img class="crisis-sideImage" src="ASSETS/IMG/crisis1.png" alt="Side Image">
-        </div>
+            <img class="crisis-sideImage" src="../../ASSETS/IMG/crisis1.png" alt="Crisis Management">
+        </section>
 
-        <!-- Container 2: Full image -->
-        <div class="crisis-container2">
-            <img class="crisis-fullImage" src="ASSETS/IMG/crisis2.png" alt="Full Crisis Image">
-        </div>
+        <!-- Container 2: Full width image with parallax effect -->
+        <section class="crisis-container2">
+            <img class="crisis-fullImage" src="../../ASSETS/IMG/crisis2.png" alt="Team Support">
+        </section>
 
-        <!-- Container 3: Text divided in two columns -->
-        <div class="crisis-container3">
+        <!-- Container 3: Two-column content -->
+        <section class="crisis-container3">
             <div class="crisis-column">
                 <h2 class="crisis-columnTitle">What are First Psychological Aids?</h2>
-                <p class="crisis-columnText">First Psychological Aids (PAP) are structured interventions designed to help employees cope with emotional and psychological distress during times of crisis.</p>
+                <p class="crisis-columnText">
+                    First Psychological Aids (PAP) are structured interventions designed to help employees cope with emotional and psychological distress during times of crisis.
+                </p>
             </div>
+            
             <div class="crisis-column">
                 <h2 class="crisis-columnTitle">Benefits of Psychological Support:</h2>
                 <div class="crisis-list">
@@ -42,14 +90,41 @@
                     <p class="crisis-listItem">• Strengthen communication and trust within teams.</p>
                 </div>
             </div>
-        </div>
+        </section>
+    </main>
 
-        <!-- Footer -->
-        <div class="footerContainer" id="footerContainer">
-            <!-- Footer content will be inserted here by JavaScript -->
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footerContent">
+            <div class="footer-section">
+                <p>Contact Us:</p>
+                <p>Email: support@whitelabel.com</p>
+                <p>Phone: +1 123 456 7890</p>
+            </div>
+            
+            <div class="footer-section">
+                <p>Quick Links:</p>
+                <a href="../home.html" class="footer-link">Home</a>
+                <a href="../startups/startups.html" class="footer-link">Startups</a>
+                <a href="../consulting/consultations.html" class="footer-link">Consulting</a>
+                <a href="../findme/findme.html" class="footer-link">Find Me a Job</a>
+            </div>
+            
+            <div class="footer-section">
+                <p>Follow us:</p>
+                <a href="https://linkedin.com" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://twitter.com" class="footer-link" target="_blank" rel="noopener">X</a>
+                <a href="https://instagram.com" class="footer-link" target="_blank" rel="noopener">Instagram</a>
+            </div>
+            
+            <p class="footer-legal" id="copyrightYear"></p>
         </div>
-    </div>
+    </footer>
 
-    <script src="crisis.js"></script>
+    <!-- JavaScript Files -->
+    <script src="./JS/global.js"></script>
+    <script src="./JS/header.js"></script>
+    <script src="./JS/footer.js"></script>
+    <script src="./JS/crisis.js"></script>
 </body>
 </html>

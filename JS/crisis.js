@@ -1,32 +1,25 @@
-// crisis.js - Main functionality for the crisis page
+// crisis.js - Page initialization
+class CrisisPage {
+    constructor() {
+        this.init();
+    }
 
+    init() {
+        this.animateEntrance();
+        console.log('Crisis page initialized');
+    }
+
+    animateEntrance() {
+        const page = document.querySelector('.crisisPage');
+        if (page) {
+            setTimeout(() => {
+                page.classList.add('loaded');
+            }, 100);
+        }
+    }
+}
+
+// Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize the crisis page
-    initCrisisPage();
+    new CrisisPage();
 });
-
-function initCrisisPage() {
-    // You can add any interactive functionality here
-    console.log('Crisis page initialized');
-    
-    // Example: Add smooth scrolling for navigation if needed
-    // Example: Add animation effects for images
-    // Example: Handle any dynamic content loading
-}
-
-// If you need to load header and footer dynamically:
-function loadHeaderAndFooter() {
-    // This would be used if header/footer are separate components
-    // For now, they're included directly in the HTML
-}
-
-// Utility functions for the crisis page
-function handleImageLoad() {
-    // Add any image loading handlers if needed
-    const images = document.querySelectorAll('img');
-    images.forEach(img => {
-        img.addEventListener('load', function() {
-            console.log('Image loaded:', this.src);
-        });
-    });
-}
